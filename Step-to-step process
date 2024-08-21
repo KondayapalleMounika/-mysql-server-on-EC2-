@@ -1,0 +1,38 @@
+1. Create new EC2 instance.
+
+2. Connect to EC2 instance via SSH.
+
+3. Update the system.
+
+ -- To update use command 
+
+    sudo apt update -y
+
+4. Install mysql
+
+     sudo apt install mysql-server
+
+5. Check status of mysql i.e whether it is actively running or not
+
+     systemctl status mysql
+
+6. Login to mysql server as a root
+    sudo mysql
+
+7. Update the password for mysql server  ( For that use sql query )
+
+   ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'providepasswordhere';
+
+   FLUSH PRIVILEGES; ( Used to ensure that mySQL server reads the changes and applies them immediately without needing to restrat the server )
+
+8. test the mysql server if it is working or not by running sample SQL queries.
+
+   CREATE DATABASE databasename;
+
+   USE databasename;
+
+   CREATE TABLE table1 (id INT, name VARCHAR(35));
+
+   INSERT INTO table1 VALUES(1,'pink'), (2,'black'), (3,'white');
+
+   SELECT * FROM table1; (to see table)
